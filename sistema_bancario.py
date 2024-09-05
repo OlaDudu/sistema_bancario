@@ -7,8 +7,6 @@ menu = """
 
 => """
 
-## print(menu)
-
 saldo = 0
 limite = 500
 extrato = ""
@@ -30,7 +28,6 @@ while True:
         
         else:
             print("Operação falhou! O valor informado é inválido.")
-            #print("Deposito")
     
     ## Operação Sacar (s)
     elif opcao == "s":
@@ -41,7 +38,7 @@ while True:
 
         excedeu_limite = valor > limite
 
-        excedeu_saque = numero_saques >= LIMITE_SAQUES ## O limite diário é de 3 saques, então deveria ser 'numero_saques > LIMITES_SAQUES'
+        excedeu_saque = numero_saques >= LIMITE_SAQUES
         
         if excedeu_saldo:
             print("Operação falhou! Você não tem saldo suficiente.")
@@ -57,16 +54,12 @@ while True:
             extrato += f"Saque: R$ {valor:.2f}\n"
             numero_saques += 1
 
-        #print("Saque")
-
     ## Operação Extrato (e)
     elif opcao == "e":
-        print("\n================== EXTRATO ==================") # \n = quebra de linha
-        print("Não foram realizadas movimentações." if not extrato else extrato) #if ternário
+        print("\n================== EXTRATO ==================")
+        print("Não foram realizadas movimentações." if not extrato else extrato)
         print(f"\nSaldo: R$ {saldo:.2f}")
         print("=============================================")
-
-        #print("Extrato")
 
     ## Operação Sair (q)
     elif opcao == "q":
